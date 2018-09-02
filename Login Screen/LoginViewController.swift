@@ -29,6 +29,10 @@ class LoginViewController: UIViewController {
     
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let dvc = segue.destination as! ResultViewController
@@ -37,13 +41,14 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func anyButtonTapped(_ sender: UIButton) {
-        
+        view.endEditing(true)
         var message = sender.titleLabel?.text
         if sender.currentTitle == loginButton.currentTitle {
-            guard let userName = userNameLabel.text else { return }
+            guard let userName = userNameLabel.text, let password = passwordLabel.text else { return }
             let trimmedUserName = userName.trimmingCharacters(in: .whitespacesAndNewlines)
             userNameLabel.text = trimmedUserName
             guard trimmedUserName != "" else { return }
+            guard password != "" else { return }
             message = userNameLabel.text
         }
         performSegue(withIdentifier: "segueView", sender: message)

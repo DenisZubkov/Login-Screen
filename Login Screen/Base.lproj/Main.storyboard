@@ -80,7 +80,7 @@
                         <viewLayoutGuide key="safeArea" id="jmS-lD-1b8"/>
                     </view>
                     <navigationItem key="navigationItem" title="Autorization" largeTitleDisplayMode="always" id="oxA-Z2-KFU">
-                        <barButtonItem key="backBarButtonItem" title="Назад" id="YJ2-TE-4bH"/>
+                        <barButtonItem key="backBarButtonItem" title=" " id="W1c-Vp-nO1"/>
                     </navigationItem>
                     <connections>
                         <outlet property="forgotPasswordButton" destination="sTt-gL-2wV" id="SnM-0c-oCC"/>
